@@ -1,9 +1,9 @@
 {
-  "name": "Leclerc location",
+  "name": "Leclerc Location",
   "type": "node",
   "slug": "leclerclocation",
   "description": "Service de locations de véhicules de Leclerc",
-  "source": "git://github.com/cozy/cozy-konnector-thename.git",
+  "source": "git://github.com/maximemenager/lerclerc-location-konnector.git",
   "permissions": {
     "bank operations": {
       "type": "io.cozy.bank.operations"

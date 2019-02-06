@@ -1,10 +1,10 @@
 {
-  "name": "cozy-konnector-leclerclocation",
+  "name": "leclerclocation",
   "version": "1.0.0",
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/konnectors/cozy-konnector-template.git"
+    "url": "git+https://github.com/maximemenager/lerclerc-location-konnector.git"
   },
   "keywords": [],
   "author": "Cozy Cloud",
