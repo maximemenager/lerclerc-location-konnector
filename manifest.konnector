@@ -4,6 +4,8 @@
   "slug": "leclerclocation",
   "description": "Service de locations de véhicules de Leclerc",
   "source": "git://github.com/maximemenager/lerclerc-location-konnector.git",
+  "vendor_link": "https://www.location.leclerc",
+  "categories": ["other"],
   "permissions": {
     "bank operations": {
       "type": "io.cozy.bank.operations"
