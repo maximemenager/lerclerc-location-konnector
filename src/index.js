@@ -132,7 +132,6 @@ function parseDocuments($) {
     let extracted = extractIDAndDateFromTitle(item.title)
     item.id = extracted.id
     item.date = extracted.date
-    // TOF: on aime bien mettre la date et le montant de la facture dans le nom du fichier
     item.filename = [moment().format('YYYY-MM-DD', item.date), extracted.id, item.amount].join('_') + '.pdf'
     return item
   })
