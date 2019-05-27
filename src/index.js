@@ -1,3 +1,7 @@
+process.env.SENTRY_DSN =
+  process.env.SENTRY_DSN ||
+  'https://202eaf14d6a741cc94b844fa7bcbaf51@sentry.cozycloud.cc/127'
+
 const { BaseKonnector, scrape, saveBills, log } = require('cozy-konnector-libs')
 
 module.exports = new BaseKonnector(start)
@@ -140,7 +144,7 @@ function parseDocuments($) {
         moment().format('YYYY-MM-DD', item.date),
         'LocationLeclerc',
         item.amount + '€',
-        extracted.vendorRef
+        extracted.id
       ].join('_') + '.pdf'
     delete item.title
     return item
