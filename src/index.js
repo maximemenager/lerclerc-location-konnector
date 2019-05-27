@@ -130,9 +130,10 @@ function parseDocuments($) {
   // Generate ID, date from items
   const newItems = items.map(function(item) {
     let extracted = extractIDAndDateFromTitle(item.title)
-    item.id = extracted.id
+    item.vendorRef = extracted.id
     item.date = extracted.date
-    item.filename = [moment().format('YYYY-MM-DD', item.date), "LocationLeclerc", item.amount + "€", extracted.id].join('_') + '.pdf'
+    item.filename = [moment().format('YYYY-MM-DD', item.date), "LocationLeclerc", item.amount + "€", extracted.vendorRef].join('_') + '.pdf'
+    delete item.title
     return item
   })
 
