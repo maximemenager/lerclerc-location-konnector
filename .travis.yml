@@ -1,0 +1,41 @@
+language: node_js
+node_js:
+- '8'
+env:
+  global:
+  - GH_USER_EMAIL="travis@example.org"
+  - GH_USER_NAME="cozy-bot"
+  - DEPLOY_REPOSITORY="git@github.com:konnectors/leclerclocation.git"
+  - secure: irbaEC6hYs/4toqjlPm6HyS6G233pBvxnLxIjnb12brLPQsRaKmqOVQWS1lS3+JYZdMD8OTqLEjVksa2Zf2jOP2RINAploaEsUvtKM7s36l5o3DESjeQ1GvUlla1YCg2Ewctv04ATXldfe3gm8VeV8odV84W0HrKVEsNFID22sTYozFyjv9OhwKWFGAC77A3CbfukXi60t6mhNysvcUYGNKNowi3iGkn53T8d+lLXazMQyQV3S+35456BiI8EkR5nLnHUR55Bb1jR0M/pN5EHTArg6kDoefwVrg3k5PPbYoACBB8ggVZwSo03zIX+1ThHyo7sDsNExgrUcb1hkrQHT87OmR47sS4+7UU8/ihrWbRX9SbIH1OGmKW6iFNdlOdnRQmfKBkbq8iBgMcZk+c09pSHMqw0KLSBxxMw/f945D/S31GEzeANENbFhE67vKxMNdWZ4Ym/EMwPL6RpXh7UhfqwsUwFaAUPLa0tJ7f184Qxld1sMosif3oUPN1+s4K2eLDVX79JpEFtWzsYhfU90yxpt4yw4r4D7AtC8SR9RuEhRr/fflXkNfkhx46HPer/bzSGm1IYv9ZuWSalok1z4qWG1baRO/Qsgr7PTjps5LsRBbA7EyN2V00zbaU1ATk3u6JSZMHhD1gEPBTOlUT20UJS9eR8LztAeg66groO0Q=
+cache:
+  yarn: true
+  directories:
+  - node_modules
+branches:
+  except:
+  - build
+  - build-debug
+script:
+- yarn lint
+- yarn build
+- yarn run check
+deploy:
+- provider: script
+  skip-cleanup: true
+  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
+  on:
+    branch: master
+- provider: script
+  skip-cleanup: true
+  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
+  on:
+    tags: true
+before_install:
+- openssl aes-256-cbc -K $encrypted_e5f2a2a63e79_key -iv $encrypted_e5f2a2a63e79_iv
+  -in github_deploy_key.enc -out /tmp/github_deploy_key -d
+- eval "$(ssh-agent -s)"
+- chmod 600 /tmp/github_deploy_key
+- ssh-add /tmp/github_deploy_key
+after_deploy:
+- rm /tmp/github_deploy_key
+- ssh-add -D
