@@ -59,7 +59,10 @@ function authenticate(username, password) {
       rp(optionsLogin)
         .then(function(json_string) {
           const json = JSON.parse(json_string)
-          if (json['statut'] === 'erreur' && json["message"] == "Email ou mot de passe incorrect") {
+          if (
+            json['statut'] === 'erreur' &&
+            json['message'] == 'Email ou mot de passe incorrect'
+          ) {
             throw new Error('LOGIN_FAILED')
           }
         })
@@ -132,7 +135,13 @@ function parseDocuments($) {
     let extracted = extractIDAndDateFromTitle(item.title)
     item.vendorRef = extracted.id
     item.date = extracted.date
-    item.filename = [moment().format('YYYY-MM-DD', item.date), "LocationLeclerc", item.amount + "€", extracted.vendorRef].join('_') + '.pdf'
+    item.filename =
+      [
+        moment().format('YYYY-MM-DD', item.date),
+        'LocationLeclerc',
+        item.amount + '€',
+        extracted.vendorRef
+      ].join('_') + '.pdf'
     delete item.title
     return item
   })
