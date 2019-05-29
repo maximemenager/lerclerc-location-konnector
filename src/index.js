@@ -33,7 +33,7 @@ async function start(fields) {
   // common case in connectors
   log('info', 'Saving data to Cozy')
   await saveBills(docs, fields, {
-    identifiers: ['']
+    identifiers: ['leclerclocation']
   })
 }
 
@@ -71,8 +71,12 @@ function authenticate(username, password) {
           }
         })
         .catch(function(err) {
-          log('error', err.message)
-          throw new Error('UNKNOWN_ERROR')
+          if(err.message === 'LOGIN_FAILED') {
+            throw err
+          } else {
+            log('error', err.message)
+            throw new Error('UNKNOWN_ERROR')
+          }
         })
     })
     .catch(function(err) {
