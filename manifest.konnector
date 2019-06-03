@@ -3,7 +3,7 @@
   "name": "Leclerc Location",
   "type": "konnector",
   "language": "node",
-  "icon": "icon.png",
+  "icon": "icon.svg",
   "slug": "leclerclocation",
   "source": "git@github.com:konnectors/leclerclocation.git",
   "editor": "Cozy",
@@ -50,7 +50,7 @@
   "locales": {
     "fr": {
       "short_description": "Récupère vos factures",
-      "long_description": "Récupère vos factures sur le site location.leclerc.\n'Leclerc Location' est la plateforme de réservation de véhicules tourisme et utilitaires de E.Leclerc",
+      "long_description": "Récupère vos factures sur le site location.leclerc.\nLeclerc Location est la plateforme de réservation de véhicules tourisme et utilitaires de E.Leclerc",
       "permissions": {
         "bank operations": {
           "description": "Utilisé pour relier les factures à des operations bancaires"
@@ -68,7 +68,7 @@
     },
     "en": {
       "short_description": "Fetch your bills",
-      "long_description": "Fetch your bills from the location.leclerc website.\n'Leclerc Location' is E.Leclerc's passenger and utility vehicle reservation platform",
+      "long_description": "Fetch your bills from the location.leclerc website.\nLeclerc Location is E.Leclerc's passenger and utility vehicle reservation platform",
       "permissions": {
         "bank operations": {
           "description": "Required to link bank operations to bills"
