@@ -71,7 +71,7 @@ function authenticate(username, password) {
           }
         })
         .catch(function(err) {
-          if(err.message === 'LOGIN_FAILED') {
+          if (err.message === 'LOGIN_FAILED') {
             throw err
           } else {
             log('error', err.message)
@@ -145,7 +145,7 @@ function parseDocuments($) {
     item.date = extracted.date
     item.filename =
       [
-        moment().format('YYYY-MM-DD', item.date),
+        moment(item.date).format('YYYY-MM-DD'),
         'LocationLeclerc',
         item.amount + '€',
         extracted.id
