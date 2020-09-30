@@ -2036,10 +2036,10 @@ escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-cozy-app@1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-cozy-app/-/eslint-config-cozy-app-1.5.0.tgz#a68addd27286984d808304f4cdac95ef8757aa8c"
-  integrity sha512-3iHvM5b77w2Xl9ZnbRvRVmfOaKJt6JmNGkNbOQTqihLesehlX9C6ax4XueEIBfwvJVP/P1b8OAuXOcr+5pi07Q==
+eslint-config-cozy-app@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-cozy-app/-/eslint-config-cozy-app-1.6.0.tgz#68b4c24adb341c445dc44825255fe3f2ae3e8fc0"
+  integrity sha512-5Cc9Vdp7KR/McWEeG/9Git+zN525/2YbI9AUzXlPjNPHTLo/5yYIFyWWDk2OAvuKCKt7kJ4xFyADWB3q/Y2rwg==
   dependencies:
     babel-eslint "10.0.1"
     eslint "5.16.0"
@@ -3710,9 +3710,10 @@ mimic-fn@^1.0.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
   integrity sha512-jf84uxzwiuiIVKiOLpfYk7N46TSy8ubTonmneY9vrpHNAnp0QBt2BxWV9dO3/j+BoVAb+a5G6YDPW3M5HOdMWQ==
 
-"minilog@git+https://github.com/cozy/minilog.git#master":
+"minilog@https://github.com/cozy/minilog.git#master":
   version "3.1.0"
-  resolved "git+https://github.com/cozy/minilog.git#f01f7d9dfe20981177dd34b9662c2f077d818f82"
+  uid f01f7d9dfe20981177dd34b9662c2f077d818f82
+  resolved "https://github.com/cozy/minilog.git#f01f7d9dfe20981177dd34b9662c2f077d818f82"
   dependencies:
     microee "0.0.6"
 
